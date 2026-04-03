@@ -1,7 +1,6 @@
 <h2>Lista de produtos:</h2>
 <div class="product-list-container">
-    <app-card-produto></app-card-produto>
-    <app-card-produto></app-card-produto>
-    <app-card-produto></app-card-produto>
-    <app-card-produto></app-card-produto>
+    @for (produto of produtos; track produto.id) {
+        <app-card-produto [produtoRecebido]="produto"></app-card-produto>
+    }
 </div>

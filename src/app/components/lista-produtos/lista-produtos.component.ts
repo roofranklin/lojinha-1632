@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-lista-produtos',
@@ -8,5 +9,7 @@ import { CardProdutoComponent } from '../card-produto/card-produto.component';
   styleUrl: './lista-produtos.component.css'
 })
 export class ListaProdutosComponent {
-
+  // Injeção de dependência moderna
+  productService = inject(ProductService);
+  produtos = this.productService.getProducts();
 }

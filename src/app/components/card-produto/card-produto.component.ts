@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-produto',
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './card-produto.component.css'
 })
 export class CardProdutoComponent {
-
+  // Recebe o dado lá de fora. A exclamação significa "confia que vai chegar"
+  @Input() produtoRecebido!: any;
 }
