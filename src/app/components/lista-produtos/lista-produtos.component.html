@@ -1,6 +1,6 @@
 <h2>Lista de produtos:</h2>
 <div class="product-list-container">
     @for (produto of produtos; track produto.id) {
-        <app-card-produto [produtoRecebido]="produto"></app-card-produto>
+        <app-card-produto [produtoRecebido]="produto" (adicionar)="receberProduto($event)"></app-card-produto>
     }
 </div>

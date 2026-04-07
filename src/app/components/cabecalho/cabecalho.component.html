@@ -1,3 +1,6 @@
 <header>
     <h1>Lojinha Angular</h1>
+    @if(cartService.obterQuantidade()){
+        Carrinho: {{ cartService.obterQuantidade() }} itens.
+    }
 </header>

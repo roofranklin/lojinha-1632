@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cabecalho',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './cabecalho.component.css'
 })
 export class CabecalhoComponent {
-
+  cartService = inject(CartService);
 }

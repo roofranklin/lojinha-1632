@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card-produto',
@@ -9,4 +9,10 @@ import { Component, Input } from '@angular/core';
 export class CardProdutoComponent {
   // Recebe o dado lá de fora. A exclamação significa "confia que vai chegar"
   @Input() produtoRecebido!: any;
+  @Output() adicionar = new EventEmitter<any>();
+
+
+  clicouComprar(): void {
+    this.adicionar.emit(this.produtoRecebido);
+  }
 }
