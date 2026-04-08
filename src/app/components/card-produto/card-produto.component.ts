@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-card-produto',
-  imports: [],
+  imports: [ CommonModule, TruncatePipe ],
   templateUrl: './card-produto.component.html',
   styleUrl: './card-produto.component.css'
 })

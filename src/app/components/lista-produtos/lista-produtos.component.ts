@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
@@ -9,11 +9,18 @@ import { CartService } from '../../services/cart.service';
   templateUrl: './lista-produtos.component.html',
   styleUrl: './lista-produtos.component.css'
 })
-export class ListaProdutosComponent {
+export class ListaProdutosComponent implements OnInit {
   // Injeção de dependência moderna
   productService = inject(ProductService);
   cartService = inject(CartService);
-  produtos = this.productService.getProducts();
+  produtos: any[] = [];
+
+  ngOnInit(): void {
+    console.log('O componente lista de produtos nasceu!');
+    // Simula a chamada de API
+    this.produtos = this.productService.getProducts();  
+  }
+  
 
   receberProduto(produto: any) {
     console.log("Produto adicionado: ", produto.title);

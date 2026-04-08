@@ -4,7 +4,8 @@
         [alt]="produtoRecebido.title" 
         width="150" 
     />
-    <h3>{{ produtoRecebido.title }}</h3>
-    <p>R$ {{ produtoRecebido.price }}</p>
+    <!-- Podemos acumular pipes-->
+    <h3>{{ produtoRecebido.title | uppercase | truncate:15 }}</h3>
+    <p>{{ produtoRecebido.price | currency: 'BRL' }}</p>
     <button (click)="clicouComprar()">Adicionar ao carrinho</button>
 </div>
