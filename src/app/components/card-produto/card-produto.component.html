@@ -6,6 +6,9 @@
     />
     <!-- Podemos acumular pipes-->
     <h3>{{ produtoRecebido.title | uppercase | truncate:15 }}</h3>
+    @if(produtoRecebido.price > 100){
+        <p>Promoção 15% off: {{ produtoRecebido.price | discount:15 | currency: 'BRL' }}</p>
+    }
     <p>{{ produtoRecebido.price | currency: 'BRL' }}</p>
     <button (click)="clicouComprar()">Adicionar ao carrinho</button>
 </div>
