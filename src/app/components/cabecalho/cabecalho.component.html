@@ -1,6 +1,10 @@
-<header>
-    <h1>Lojinha Angular</h1>
-    @if(cartService.obterQuantidade()){
-        Carrinho: {{ cartService.obterQuantidade() }} itens.
-    }
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Lojinha Angular</a>
+        <div class="d-flex align-items-center">
+            <span class="badge bg-success fs-6">
+                Carrinho: {{ cartService.obterQuantidade() }} itens.
+            </span>
+        </div>
+    </div>
+</nav>

@@ -1,6 +1,16 @@
-<h2>Lista de produtos:</h2>
-<div class="product-list-container">
-    @for (produto of produtos; track produto.id) {
-        <app-card-produto [produtoRecebido]="produto" (adicionar)="receberProduto($event)"></app-card-produto>
-    }
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Lista de produtos</h2>
+    <div class="row g-4">  
+        @for (produto of produtos; track produto.id) {
+            <div class="col-12 col-md-6 col-lg-3">
+                <app-card-produto [produtoRecebido]="produto" (adicionar)="receberProduto($event)"></app-card-produto>
+            </div>
+        }
+    </div>
 </div>
+
+
+
+
+    
+
