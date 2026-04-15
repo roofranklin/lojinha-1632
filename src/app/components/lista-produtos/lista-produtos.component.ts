@@ -16,9 +16,15 @@ export class ListaProdutosComponent implements OnInit {
   produtos: any[] = [];
 
   ngOnInit(): void {
-    console.log('O componente lista de produtos nasceu!');
-    // Simula a chamada de API
-    this.produtos = this.productService.getProducts();  
+    console.log('Pedindo produtos para a API...');
+
+    // Precisamos nos INSCREVER no Observable para que a requisição aconteça
+    this.productService.getProducts().subscribe((dadosDaApi: any[]) => {
+      console.log("Os dados chegaram!");
+      
+      // Pegamos a resposta da API e guardamos na nossa variável
+      this.produtos = dadosDaApi;
+    });
   }
   
 
