@@ -13,17 +13,25 @@ export class ListaProdutosComponent implements OnInit {
   // Injeção de dependência moderna
   productService = inject(ProductService);
   cartService = inject(CartService);
+
   produtos: any[] = [];
+  carregando: boolean = true;
 
   ngOnInit(): void {
     console.log('Pedindo produtos para a API...');
 
     // Precisamos nos INSCREVER no Observable para que a requisição aconteça
-    this.productService.getProducts().subscribe((dadosDaApi: any[]) => {
-      console.log("Os dados chegaram!");
-      
-      // Pegamos a resposta da API e guardamos na nossa variável
-      this.produtos = dadosDaApi;
+    this.productService.getProducts().subscribe( {
+      next: (dadosDaApi: any[]) => {
+        console.log("Os dados chegaram", dadosDaApi);
+        this.produtos = dadosDaApi;
+        this.carregando = false; // Desliga o carregamento quando chega
+      },
+      error: (erro: any) => {
+        console.error("Opa, deu ruim!", erro);
+        this.carregando = false; // Desliga mesmo se der erro para não travar a tela
+        alert("Erro ao buscar produto");
+      }
     });
   }
   
