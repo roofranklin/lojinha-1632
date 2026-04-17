@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="#">Lojinha Angular</a>
         <div class="d-flex align-items-center">
             <span class="badge bg-success fs-6">
-                Carrinho: {{ cartService.obterQuantidade() }} itens.
+                Carrinho: {{ (carrinho$ | async)?.length }} itens.
             </span>
         </div>
     </div>
