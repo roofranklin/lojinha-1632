@@ -15,3 +15,6 @@ export const addToCart = createAction(
     '[Card de Produto] Adicionar ao Carrinho',
     props<{ product: any }>() // A carga que a ação carrega
 )
+
+// Ação para esvaziar o carrinho
+export const clearCart = createAction('[Cabeçalho] Limpar carrinho');

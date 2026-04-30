@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { CartState } from '../../store/cart.actions';
+import { CartState, clearCart } from '../../store/cart.actions';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,4 +14,8 @@ export class CabecalhoComponent {
 
   // store.select retorna um Observable
   carrinho$ = this.store.select(state => state.cart.items);
+
+  esvaziarCarrinho() {
+    this.store.dispatch(clearCart());
+  }
 }

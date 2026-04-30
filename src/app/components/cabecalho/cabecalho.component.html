@@ -5,6 +5,9 @@
             <span class="badge bg-success fs-6">
                 Carrinho: {{ (carrinho$ | async)?.length }} itens.
             </span>
+            <button class="btn btn-sm btn-danger ms-2" (click)="esvaziarCarrinho()">
+                Limpar Carrinho
+            </button>
         </div>
     </div>
 </nav>
