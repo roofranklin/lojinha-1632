@@ -1,0 +1,18 @@
+<div class="card h-100">
+    <a [routerLink]="['/produto', produtoRecebido.id]">
+        <img [src]="produtoRecebido.image" [alt]="produtoRecebido.title" class="card-img-top">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title" [title]="produtoRecebido.title">
+            {{ produtoRecebido.title | uppercase | truncate:15 }}
+        </h5>
+        @if(produtoRecebido.price > 100){
+            <p>Promoção 15% off: {{ produtoRecebido.price | discount:15 | currency: 'BRL' }}</p>
+        }
+        <p>{{ produtoRecebido.price | currency: 'BRL' }}</p>
+    </div>
+    <button class="btn btn-primary w-100" [routerLink]="['/produto', produtoRecebido.id]">
+        ver detalhes
+    </button>
+</div>
+

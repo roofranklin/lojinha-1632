@@ -4,10 +4,3 @@ body {
     background-color: #f4f4f4;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.container {
-    max-width: 1140px;
-    margin: 20px auto;
-    padding: 0 15px;
-    min-height: 70vh;
-}

@@ -1,9 +1,24 @@
-footer {
+.meu-rodape {
     position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #333333;
     color: white;
-    text-align: center;
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rodape-links a{
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+@media (max-width: 768px) {
+    .meu-rodape {
+        flex-direction: column;
+        text-align: center;
+    }
 }

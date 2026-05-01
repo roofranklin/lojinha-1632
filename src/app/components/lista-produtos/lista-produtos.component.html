@@ -1,1 +1,26 @@
-<p>lista-produtos works!</p>
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Lista de produtos</h2>
+    @if(carregando) {
+        <div class="text-center my-5">
+            <div class="spinner-border text-primary">
+                <span class="visually-hidden">Carregando...</span>
+            </div>
+            <p class="mt-2">Buscando a lista de produtos para você...</p>
+        </div>
+    }
+    @else {
+        <div class="row g-4">  
+            @for (produto of produtos; track produto.id) {
+                <div class="col-12 col-md-6 col-lg-3">
+                    <app-card-produto [produtoRecebido]="produto"></app-card-produto>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+
+
+
+    
+
