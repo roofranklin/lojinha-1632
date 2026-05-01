@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CartState, clearCart } from '../../store/cart.actions';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cabecalho',
-  imports: [ CommonModule ],
+  imports: [ CommonModule, RouterModule ],
   templateUrl: './cabecalho.component.html',
   styleUrl: './cabecalho.component.css'
 })
