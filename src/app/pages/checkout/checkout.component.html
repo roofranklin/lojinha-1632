@@ -24,6 +24,26 @@
             }
         </div>
 
+        <h2 class="mt-4">Dados do Cartão</h2>
+
+        <div class="mb-3">
+            <label class="form-label">Número do Cartão</label>
+            <input type="text" class="form-control" formControlName="numeroCartao" maxlength="16" placeholder="0000000000000000">
+
+            @if (checkoutForm.get('numeroCartao')?.invalid && checkoutForm.get('numeroCartao')?.touched) {
+                <small class="text-danger">Cartão inválido (deve ter exatamente 16 dígitos).</small>
+            }
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Código de Segurança</label>
+            <input type="text" class="form-control" formControlName="codigoSeguranca" maxlength="3" placeholder="000">
+
+            @if (checkoutForm.get('codigoSeguranca')?.invalid && checkoutForm.get('codigoSeguranca')?.touched) {
+                <small class="text-danger">Código inválido (deve ter exatamente 3 dígitos).</small>
+            }
+        </div>
+
         <button class="btn btn-success" type="submit">Confirmar pedido</button>
     </form>
 </div>

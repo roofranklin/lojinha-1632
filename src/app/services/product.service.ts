@@ -14,4 +14,9 @@ export class ProductService {
     // 3. Faz um pedido do tipo GET e retorna um Observable
     return this.http.get<any[]>(this.apiUrl);    
   }
+
+  getProductById(id: number): any {
+    // 4. Faz um pedido do tipo GET para um produto específico
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

@@ -4,10 +4,11 @@ import { TruncatePipe } from '../../pipes/truncate.pipe';
 import { DiscountPipe } from '../../pipes/discount.pipe';
 import { Store } from '@ngrx/store';
 import { addToCart } from '../../store/cart.actions';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card-produto',
-  imports: [ CommonModule, TruncatePipe, DiscountPipe ],
+  imports: [ CommonModule, TruncatePipe, DiscountPipe, RouterLink ],
   templateUrl: './card-produto.component.html',
   styleUrl: './card-produto.component.css'
 })

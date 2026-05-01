@@ -1,5 +1,7 @@
 <div class="card h-100">
-    <img [src]="produtoRecebido.image" [alt]="produtoRecebido.title" class="card-img-top">
+    <a [routerLink]="['/produto', produtoRecebido.id]">
+        <img [src]="produtoRecebido.image" [alt]="produtoRecebido.title" class="card-img-top">
+    </a>
     <div class="card-body">
         <h5 class="card-title" [title]="produtoRecebido.title">
             {{ produtoRecebido.title | uppercase | truncate:15 }}
@@ -9,6 +11,8 @@
         }
         <p>{{ produtoRecebido.price | currency: 'BRL' }}</p>
     </div>
-    <button class="btn btn-primary w-100" (click)="clicouComprar()"> Adicionar ao Carrinho</button>
+    <button class="btn btn-primary w-100" [routerLink]="['/produto', produtoRecebido.id]">
+        ver detalhes
+    </button>
 </div>
 

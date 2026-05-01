@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  @if (carregando) {
+    <div class="text-center my-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-2">Carregando detalhes do produto...</p>
+    </div>
+  } @else if (produto) {
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="produto.image" [alt]="produto.title" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6">
+        <h2>{{ produto.title }}</h2>
+        <p class="text-muted">{{ produto.category }}</p>
+        <p>{{ produto.description }}</p>
+
+        @if (produto.price > 100) {
+          <p class="fs-5">
+            De <span class="text-decoration-line-through">{{ produto.price | currency:'BRL' }}</span> por:
+            <strong class="text-success fs-4">{{ produto.price | discount:15 | currency:'BRL' }}</strong>
+          </p>
+        } @else {
+          <p class="fs-4 fw-bold">{{ produto.price | currency:'BRL' }}</p>
+        }
+
+        <p><strong>Avaliação:</strong> ⭐ {{ produto.rating.rate }} / 5</p>
+        <p><strong>Total de Avaliações:</strong> {{ produto.rating.count }}</p>
+
+        <button class="btn btn-primary btn-lg w-100 mt-3" (click)="adicionarAoCarrinho()">
+          🛒 Adicionar ao Carrinho
+        </button>
+
+        <a routerLink="/" class="btn btn-outline-secondary w-100 mt-2">← Voltar para a Vitrine</a>
+      </div>
+    </div>
+  } @else {
+    <div class="alert alert-danger">Produto não encontrado.</div>
+  }
+</div>

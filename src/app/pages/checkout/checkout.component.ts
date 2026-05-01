@@ -13,7 +13,9 @@ export class CheckoutComponent {
   checkoutForm = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    endereco: new FormControl('', [Validators.required])
+    endereco: new FormControl('', [Validators.required]),
+    numeroCartao: new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]),
+    codigoSeguranca: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(3)])
   });
 
   // 3. Método chamado no submit
